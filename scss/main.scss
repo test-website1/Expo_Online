@@ -1,0 +1,364 @@
+$white: #fff;
+$nav-color: #EAEEEF;
+$bg-menu: #202020;
+$stroke-color: #d5d5d5;
+$section-bg: #dbdbdb;
+$btn-color: #35b300;
+$listItem-color: #1bc519;
+$header-btn: #6bbb37;
+
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 1310px;
+	padding: 0 15px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+// header
+
+.header {
+	position: relative;
+	z-index: 0;
+	background-image: url('../img/header.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	padding-top: 10px;
+	height: 235px;
+
+	&__bg {
+		background: $bg-menu;
+	}
+
+	&__content {
+		display: flex;
+		margin: 0 auto;
+		height: 55px;
+		max-width: 1110px;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+		color: $nav-color;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	&__burger {
+		display: none;
+		cursor: pointer;
+
+		&-elem {
+			transition: 0.5s;
+			display: block;
+			background: $white;
+			height: 1.5px;
+			margin-top: 6px;
+			width: 30px;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+
+		&-static {
+			position: fixed !important;
+			top: 22px;
+			right: 14px;
+		}
+	}
+
+	&__menu {
+		margin: 0;
+	}
+
+	&__link {
+		margin-right: 20px;
+		font-size: 12px;
+		color: $nav-color;
+		text-transform: uppercase;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__lang {
+		font-size: 12px;
+		text-transform: uppercase;
+		color: darken($nav-color, 60%);
+	}
+
+	&__item {
+		color: $white;
+		font-size: 17px;
+		line-height: 41.67px;
+
+		&-after {
+			&::after {
+				content: '/';
+				margin: 0 4px;
+			}
+		}
+	}
+
+
+	&__main {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		margin-top: 22px;
+	}
+
+	&__title {
+		color: $white;
+		font-weight: 400;
+		margin: 0;
+		margin-bottom: 18px;
+		font-size: 38px;
+		margin-right: 30px;
+	}
+
+	&__btn {
+		padding: 10px 22px;
+		background-color: $header-btn;
+		outline: none;
+		border: none;
+		border-radius: 4px;
+		color: $white;
+		font-size: 21px;
+		font-weight: 500;
+	}
+
+	&__parag {
+		font-size: 17px;
+		color: $white;
+	}
+}
+
+
+.sections {
+	&__bg {
+		width: 100%;
+		height: 413px;
+		position: absolute;
+		margin: 33px 0 0 0;
+		background-color: $section-bg;
+	}
+
+	&__row {
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+
+	&__col {
+		position: relative;
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__title {
+		margin-top: 88px;
+		font-size: 25px;
+		font-weight: 500;
+		line-height: 33px;
+		text-align: center;
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: -11px;
+			left: 50%;
+			transform: translate(-50%, 0);
+			width: 57px;
+			height: 4px;
+			background-color: $listItem-color;
+		}
+	}
+
+	&-list {
+		list-style: none;
+		padding-left: 0;
+
+		&__item {
+			transition: 0.3s;
+			font-size: 17px;
+			font-weight: 400;
+			line-height: 33px;
+			cursor: default;
+
+			&:hover {
+				color: $listItem-color;
+			}
+
+			&:nth-child(1)::before {
+				content: '1';
+				font-size: 29px;
+				font-weight: 700;
+				line-height: 33px;
+				margin-right: 36px;
+			}
+
+			&:nth-child(2)::before {
+				content: '2';
+				font-size: 29px;
+				font-weight: 700;
+				line-height: 33px;
+				margin-right: 36px;
+			}
+
+			&:nth-child(3)::before {
+				content: '3';
+				font-size: 29px;
+				font-weight: 700;
+				line-height: 33px;
+				margin-right: 36px;
+			}
+
+			&:nth-child(4)::before {
+				content: '4';
+				font-size: 29px;
+				font-weight: 700;
+				line-height: 33px;
+				margin-right: 36px;
+			}
+
+			&:nth-child(5)::before {
+				content: '5';
+				font-size: 29px;
+				font-weight: 700;
+				line-height: 33px;
+				margin-right: 36px;
+			}
+		}
+
+		&__elem {
+			font-size: 15px;
+			font-weight: 400;
+			margin-left: 32px;
+			position: relative;
+			line-height: 29.17px;
+		}
+
+		&__elem::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 4px;
+			left: -32px;
+			background-size: 100%;
+			width: 22px;
+			height: 22px;
+		}
+
+		&__elem:nth-child(1)::before {
+			background: url('../img/icons-avocode.svg') no-repeat 50%/22px auto;
+			background-position: 0 0px;
+		}
+
+		&__elem:nth-child(2)::before {
+			background: url('../img/icons-avocode.svg') no-repeat 50%/22px auto;
+			background-position: 0 -29px;
+		}
+
+		&__elem:nth-child(3)::before {
+			background: url('../img/icons-avocode.svg') no-repeat 50%/22px auto;
+			background-position: 0 -59px;
+		}
+
+		&__elem:nth-child(4)::before {
+			background: url('../img/icons-avocode.svg') no-repeat 50%/22px auto;
+			background-position: 0 -86px;
+		}
+
+		&__elem:nth-child(5)::before {
+			background: url('../img/icons-avocode.svg') no-repeat 50%/22px auto;
+			background-position: 0 -115px;
+		}
+
+		&__elem:nth-child(6)::before {
+			background: url('../img/icons-avocode.svg') no-repeat 50%/22px auto;
+			background-position: 0 -144px;
+		}
+
+		&__elem:nth-child(7)::before {
+			background: url('../img/icons-avocode.svg') no-repeat 50%/22px auto;
+			background-position: 0 -174px;
+		}
+
+		&__elem:nth-child(8)::before {
+			background: url('../img/icons-avocode.svg') no-repeat 50%/22px auto;
+			background-position: 0 -202px;
+		}
+	}
+
+	&__button {
+		padding: 10px 22px;
+		display: block;
+		margin: 35px auto 0;
+		background-color: $header-btn;
+		outline: none;
+		border: none;
+		border-radius: 4px;
+		color: $white;
+		font-size: 21px;
+		font-weight: 500;
+	}
+
+	&__help {
+		display: flex;
+		margin-top: 15px;
+		padding: 35px 0;
+
+		img {
+			max-width: 13px;
+			max-height: 21px;
+		}
+	}
+
+	&__paragraph {
+		margin: 0 16px;
+	}
+
+	&__link {
+		color: $header-btn;
+		text-decoration: underline;
+	}
+
+	&__background {
+		width: 100%;
+		height: 302px;
+		position: absolute;
+		margin: 43px 0 0 0;
+		background-color: $section-bg;
+	}	
+}
+
+.advantages {
+	margin: 34px 0 42px 0;
+
+	&__block {
+		margin-top: 40px;
+	}
+}
